@@ -1,62 +1,8 @@
-<html><head><script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><script>
-try{
-var commentCnt = new Array();
-} catch(e){}
-
-newComment = function(post_id){
-try{
-window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
-} catch(e){}
-}
-setCommentCnt = function(post_id){
-try{
-if(commentCnt[post_id]){
-document.write(commentCnt[post_id]);
-} else {
-document.write(0);
-}
-} catch(e){}
-}
-</script><script>
-
-statInfo = new Array();
-setStatVar = function(index,value){
-statInfo[index] = value;
-}
-getStatVar = function(index){
-if(statInfo[index]) document.write(statInfo[index]);
-}
-
-setStatVar('total_post','0');
-setStatVar('total_author','0');
-setStatVar('modify_date','???? 22 ????? 1395');
-
-setStatVar('today_view','6');
-setStatVar('yesterday_view','0');
-
-setStatVar('this_month_view','16');
-setStatVar('last_month_view','10');
-
-setStatVar('total_view','70');
-setStatVar('last_view_date','???? 22 ????? 1395 (11:58)');
+<html>
+	<head>
 
 
-
-
-</script><script>
-messageForm = function(post_id){
-try{
-window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
-} catch(e){}
-}
-</script><script>
-linkdailyForm = function(){
-try{
-window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
-} catch(e){}
-}
-</script>
-
+		<script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script>
 
 
 
@@ -81,13 +27,13 @@ window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,m
 <div id="container">
 <div>
 <h1 id="h1" class="transition-in">
-	<span class="letter-0">M</span>
-	<span class="letter-1">u</span>
-	<span class="letter-2">r</span>
-	<span class="letter-3">p</span>
-	<span class="letter-4">h</span>
-	<span class="letter-5">y</span>
-	<span class="letter-6">y</span>
+	<span class="letter">M</span>
+	<span class="letter">u</span>
+	<span class="letter">r</span>
+	<span class="letter">p</span>
+	<span class="letter">h</span>
+	<span class="letter">y</span>
+	<span class="letter">y</span>
 </h1>
 <br><br><br><br><br><br><br><br>
 
