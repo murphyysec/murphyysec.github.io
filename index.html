@@ -55,155 +55,7 @@ try{
 window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
 } catch(e){}
 }
-</script><script>
-
-var MihanblogShopAdsArray = new Array();
-
-function GetMihanBlogShowAds(){
-if(MihanblogShopAdsArray.length){
-var adsTarget = 'MihanblogShopAds';
-var containerWidth = document.getElementById(adsTarget).offsetWidth;
-if(containerWidth>=200){
-var adsCnt = parseInt(containerWidth / 200) ;
-if(adsCnt>MihanblogShopAdsArray.length){
-adsCnt = MihanblogShopAdsArray.length ; 
-}
-//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
-var OneAdsWidth = containerWidth / adsCnt ;
-if(OneAdsWidth>400){
-OneAdsWidth = 400 ;
-}
-var OutHtml = '';
-var img = '';
-var link = '';
-var title = '';
-var description = '';
-var imgWidth = 70;
-if(OneAdsWidth>230){
-imgWidth = 80;
-}
-if(OneAdsWidth>300){
-imgWidth = 90;
-}
-for(adsOne=0;adsOne<adsCnt;adsOne++){
-
-img = MihanblogShopAdsArray[adsOne]['img'];
-link = MihanblogShopAdsArray[adsOne]['link'];
-title = MihanblogShopAdsArray[adsOne]['title'];
-description = MihanblogShopAdsArray[adsOne]['description'];
-
-OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
-
-OutHtml += '	<a href="'+link+'" target="_blank" style="text-decoration:none">';
-
-OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
-OutHtml += 					title;
-OutHtml += '			</div>';
-OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
-OutHtml += '				<img src="'+img+'" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
-OutHtml += '			</div>';
-OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
-OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
-OutHtml += 						description;
-OutHtml += '				</div>';
-OutHtml += '			</div>';
-
-OutHtml += '	</a>';
-
-OutHtml += '</td>';
-}
-
-var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
-
-Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
-
-document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
-document.getElementById(adsTarget).innerHTML = Out ;
-}
-}
-}
 </script>
-<style>
-@font-face {
-font-family: 'Mihan-Iransans';
-src: url('/public/public/fonts/Iransans.eot');
-src: url('/public/public/fonts/Iransans.eot?#iefix') format('embedded-opentype'),
-url('/public/public/fonts/Iransans.woff2') format('woff2'),
-url('/public/public/fonts/Iransans.woff') format('woff'),
-url('/public/public/fonts/Iransans.ttf') format('truetype');
-font-weight: normal;
-font-style: normal;
-}
-@font-face {
-font-family: 'Mihan-IransansBold';
-src: url('/public/public/fonts/Iransans-Black.eot');
-src: url('/public/public/fonts/Iransans-Black.eot?#iefix') format('embedded-opentype'),
-url('/public/public/fonts/Iransans-Black.woff2') format('woff2'),
-url('/public/public/fonts/Iransans-Black.woff') format('woff'),
-url('/public/public/fonts/Iransans-Black.ttf') format('truetype');
-font-weight: normal;
-font-style: normal;
-}
-@font-face {
-font-family: 'Mihan-IransansLight';
-src: url('/public/public/fonts/Iransans-UltraLight.eot');
-src: url('/public/public/fonts/Iransans-UltraLight.eot?#iefix') format('embedded-opentype'),
-url('/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
-url('/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
-url('/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
-font-weight: normal;
-font-style: normal;
-}
-@font-face {
-font-family: 'Mihan-Nassim';
-src: url('/public/public/fonts/Nassim.eot');
-src: url('/public/public/fonts/Nassim.eot?#iefix') format('embedded-opentype'),
-url('/public/public/fonts/Nassim.woff2') format('woff2'),
-url('/public/public/fonts/Nassim.woff') format('woff'),
-url('/public/public/fonts/Nassim.ttf') format('truetype');
-font-weight: normal;
-font-style: normal;
-}
-@font-face {
-font-family: 'Mihan-Koodak';
-src: url('/public/public/fonts/Koodak.eot');
-src: url('/public/public/fonts/Koodak.eot?#iefix') format('embedded-opentype'),
-url('/public/public/fonts/Koodak.woff2') format('woff2'),
-url('/public/public/fonts/Koodak.woff') format('woff'),
-url('/public/public/fonts/Koodak.ttf') format('truetype');
-font-weight: normal;
-font-style: normal;
-}
-@font-face {
-font-family: 'Mihan-Yekan';
-src: url('/public/public/fonts/Yekan.eot');
-src: url('/public/public/fonts/Yekan.eot?#iefix') format('embedded-opentype'),
-url('/public/public/fonts/Yekan.woff2') format('woff2'),
-url('/public/public/fonts/Yekan.woff') format('woff'),
-url('/public/public/fonts/Yekan.ttf') format('truetype');
-font-weight: normal;
-font-style: normal;
-}
-
-
-
-
-/* Smartphones (portrait and landscape) ----------- */
-
-/*
-@media only screen and (max-width : 480px) and (min-width : 320px) {
-.sabaClick_advert__wrapper{
-display:block;
-}
-.sabaClick_advert__inner{
-max-width: 90%;
-margin: 0 5%;
-}
-}
-*/
-
-</style>
-
 
 
 
@@ -228,20 +80,28 @@ margin: 0 5%;
 
 <div id="container">
 <div>
-<h1 id="h1" class="transition-in"><span class="letter-0">M</span><span class="letter-1">u</span><span class="letter-2">r</span><span class="letter-3">p</span><span class="letter-4">h</span><span class="letter-5">y</span><span class="letter-6">y</span></h1>
+<h1 id="h1" class="transition-in">
+	<span class="letter-0">M</span>
+	<span class="letter-1">u</span>
+	<span class="letter-2">r</span>
+	<span class="letter-3">p</span>
+	<span class="letter-4">h</span>
+	<span class="letter-5">y</span>
+	<span class="letter-6">y</span>
+</h1>
 <br><br><br><br><br><br><br><br>
 
 <font size="2" face="Arial">
 <h2 id="h2" class="transition-in"></h2>
+<a href="https://hackerone.com/murphyy1337?type=user" title="Hackerone"><img src="https://cdn.freebiesupply.com/logos/thumbs/2x/hackerone-logo.png" width="50px"></a>
+<a href="https://bugcrowd.com/murphyy" title="Bugcrownd"><img src="https://www.bugcrowd.com/wp-content/uploads/2022/06/Press-Kit-Transparent-Hex-B.png" width="50px"></a>
+<a href="https://app.intigriti.com/researcher/profile/murphy" title="İntigriti"><img src="https://i0.wp.com/blog.intigriti.com/wp-content/uploads/2019/01/favicon.png" width="50px"></a>
+<a href="https://twitter.com/murphyysec" title="Twitter"><img src="https://artistsatrisk.org/wp-content/uploads/2022/03/twitter-icon-download-18.png" width="50px"></a>
 </font>
 <!--<h3></h3>
 <h3 id="h3">&nbsp; </h3>!-->
 
 </div>
-<a href="https://hackerone.com/murphyy1337?type=user" title="Hackerone"><img src="https://cdn.freebiesupply.com/logos/thumbs/2x/hackerone-logo.png" width="50px"></a>
-<a href="https://bugcrowd.com/murphyy" title="Bugcrownd"><img src="https://www.bugcrowd.com/wp-content/uploads/2022/06/Press-Kit-Transparent-Hex-B.png" width="50px"></a>
-<a href="https://app.intigriti.com/researcher/profile/murphy" title="İntigriti"><img src="https://i0.wp.com/blog.intigriti.com/wp-content/uploads/2019/01/favicon.png" width="50px"></a>
-<a href="https://twitter.com/murphyysec" title="Twitter"><img src="https://artistsatrisk.org/wp-content/uploads/2022/03/twitter-icon-download-18.png" width="50px"></a>
 </div>
 
 <canvas id="canvas" width="1443" height="66"></canvas>
@@ -542,30 +402,9 @@ document.onmouseup=reEnable
 var tit = document.title;var c = 0; function writetitle() {document.title = tit.substring(0,c);if(c==tit.length){c = 0;setTimeout("writetitle()", 2000)}else {c++;setTimeout("writetitle()",275)}}writetitle()</script>
 
 
-<script>
-//    setTimeout(function () {
-//        GetMihanBlogShowAds();
-//    }, 1000);
-</script>
-<!--NEW SERVER--><!--;)-->
 
 
 
 
-
-<script type="text/javascript">
-
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-153829-9']);
-_gaq.push(['_setDomainName', 'kafeandroidi.mihanblog.com']);
-_gaq.push(['_trackPageview']);
-
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
-
-</script>
 <iframe src="https://www.youtube.com/embed/u7I-cimjjN0?rel=0&amp;autoplay=1" allowfullscreen="" width="0" height="0" frameborder="0"></iframe>
 <script src="moz-extension://26fa59e9-9405-4d56-90f1-7131ba19b03d/js/app.js" type="text/javascript"></script></body></html>
